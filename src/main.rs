@@ -1,4 +1,4 @@
-use bank_model::bank_account_id::BankAccountId;
+use bank_model::bank::BankAccountId;
 
 fn main() {
     let bank_account_id = BankAccountId::new(1);

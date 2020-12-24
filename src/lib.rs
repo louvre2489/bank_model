@@ -1,1 +1,1 @@
-pub mod bank_account_id;
+pub mod bank;
