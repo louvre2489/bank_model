@@ -10,6 +10,10 @@ impl Money {
         Self { balance }
     }
 
+    pub fn yens_u32(yen: u32) -> Self {
+        Self { balance: yen }
+    }
+
     pub fn add(&self, amount: Money) -> Result<Self, MoneyError> {
         let balance = self.balance + amount.balance;
         Ok(Self { balance })

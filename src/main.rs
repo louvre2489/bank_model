@@ -9,4 +9,7 @@ fn main() {
     let balance = Money::new(100);
     let bank_account = BankAccount::new(id, user_account_id, balance);
     println!("{:?}", bank_account);
+
+    let new_ba1 = bank_account.deposit(Money::yens_u32(1000)).unwrap();
+    println!("{:?}", new_ba1);
 }
