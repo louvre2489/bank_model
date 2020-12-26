@@ -24,8 +24,8 @@ impl Money {
         }
     }
 
-    pub fn yens_u32(yen: i64) -> Self {
-        let amount = Decimal::new(yen, 0);
+    pub fn yens_u32(yen: u32) -> Self {
+        let amount = Decimal::new(yen.into(), 0);
         Self {
             amount,
             currency: CurrencyCode::JPY,
