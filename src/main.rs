@@ -1,6 +1,12 @@
+use bank_model::bank::BankAccount;
 use bank_model::bank::BankAccountId;
+use bank_model::bank::Money;
+use bank_model::bank::UserAccountId;
 
 fn main() {
-    let bank_account_id = BankAccountId::new(1);
-    println!("{:?}", bank_account_id);
+    let id = BankAccountId::new(1);
+    let user_account_id = UserAccountId::new(10);
+    let balance = Money::new(100);
+    let bank_account = BankAccount::new(id, user_account_id, balance);
+    println!("{:?}", bank_account);
 }
