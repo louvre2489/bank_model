@@ -1,2 +1,4 @@
 #[derive(Debug)]
-pub struct MoneyError {}
+pub enum MoneyError {
+    NotSameCurrencyError,
+}
