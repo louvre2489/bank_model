@@ -1,8 +1,12 @@
 use crate::bank::CurrencyCode;
-use crate::bank::MoneyError;
 use rust_decimal::Decimal;
 
 use std::ops::Add;
+
+#[derive(Debug)]
+pub enum MoneyError {
+    NotSameCurrencyError,
+}
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Money {
@@ -15,6 +19,13 @@ impl Money {
         Self { amount, currency }
     }
 
+    pub fn zero(currency: CurrencyCode) -> Self {
+        Self {
+            amount: Decimal::new(0, 0),
+            currency,
+        }
+    }
+
     pub fn from(pair: (u32, CurrencyCode)) -> Self {
         let (amount, currency) = pair;
 
@@ -24,7 +35,7 @@ impl Money {
         }
     }
 
-    pub fn yens_u32(yen: u32) -> Self {
+    pub fn yens_i32(yen: i32) -> Self {
         let amount = Decimal::new(yen.into(), 0);
         Self {
             amount,
