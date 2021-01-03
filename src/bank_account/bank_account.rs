@@ -1,7 +1,7 @@
-use crate::bank::BankAccountId;
-use crate::bank::Money;
-use crate::bank::MoneyError;
-use crate::bank::UserAccountId;
+use crate::bank_account::BankAccountId;
+use crate::bank_account::UserAccountId;
+use crate::money::Money;
+use crate::money::MoneyError;
 
 #[derive(Debug, Clone)]
 pub struct BankAccount {

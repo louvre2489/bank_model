@@ -1,7 +1,5 @@
-use crate::bank::CurrencyCode;
+use crate::currency::CurrencyCode;
 use rust_decimal::Decimal;
-
-use std::ops::Add;
 
 #[derive(Debug)]
 pub enum MoneyError {

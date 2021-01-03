@@ -1,22 +1,11 @@
-use bank_model::bank::context::context::TransferContext;
-use bank_model::bank::BankAccount;
-use bank_model::bank::BankAccountId;
-use bank_model::bank::CurrencyCode;
-use bank_model::bank::Money;
-use bank_model::bank::UserAccountId;
-
-use rust_decimal::Decimal;
+use bank_model::bank_account::context::context::TransferContext;
+use bank_model::bank_account::BankAccount;
+use bank_model::bank_account::BankAccountId;
+use bank_model::bank_account::UserAccountId;
+use bank_model::currency::CurrencyCode;
+use bank_model::money::Money;
 
 fn main() {
-    let id = BankAccountId::new(1);
-    let user_account_id = UserAccountId::new(10);
-    let amount = Decimal::new(100, 0);
-    let currency = CurrencyCode::JPY;
-    let balance = Money::new(amount, currency);
-
-    let bank_account = BankAccount::new(id, user_account_id, balance);
-    println!("{:?}", bank_account);
-
     let ba1 = BankAccount::new(
         BankAccountId::new(1),
         UserAccountId::new(1),

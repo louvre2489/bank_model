@@ -2,8 +2,8 @@
 /// BankAcountには非依存
 /// 送金できるT型として定義する
 pub mod context {
-    use crate::bank::roles::roles::{ReceiveRole, SenderRole};
-    use crate::bank::{Money, MoneyError};
+    use crate::bank_account::roles::roles::{ReceiveRole, SenderRole};
+    use crate::money::{Money, MoneyError};
 
     pub struct TransferContext<T: ReceiveRole, F: SenderRole<T>> {
         from: F,

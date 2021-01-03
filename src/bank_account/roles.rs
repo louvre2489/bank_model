@@ -1,6 +1,6 @@
 pub mod roles {
-    use crate::bank::BankAccount;
-    use crate::bank::{Money, MoneyError};
+    use crate::bank_account::BankAccount;
+    use crate::money::{Money, MoneyError};
 
     /// 送金先のロール
     pub trait ReceiveRole {
@@ -18,8 +18,9 @@ pub mod roles {
 }
 
 mod roles_impl {
-    use crate::bank::roles::roles::{ReceiveRole, SenderRole};
-    use crate::bank::{BankAccount, Money, MoneyError};
+    use crate::bank_account::roles::roles::{ReceiveRole, SenderRole};
+    use crate::bank_account::BankAccount;
+    use crate::money::{Money, MoneyError};
 
     /// 送金先のロール
     impl ReceiveRole for BankAccount {
